@@ -15,14 +15,14 @@ public class Practica2 {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        int[] array = {1,4,7,1,1,8,4,1,4,9};
-        String[] array1 = {"Ana","Juan","Chacha","Fuerte","Piedra","Loco"};
+        Integer[] array = {1,4,7,1,1,8,4,1,4,9};
+        String[] array1 = {"Ana","Juan","Chacha","Fuerte","Piedra","Loco","Ana"};
         
         Histogram histo = new Histogram(array);
         
-        HashMap<Integer,Integer> histogram = histo.getHisto();
+        HashMap<String,Integer> histogram = histo.getHisto();
         
-        for (Integer key : histogram.keySet()) {
+        for (Object key : histogram.keySet()) {
             System.out.println(key + " : " + histogram.get(key));
             
         }

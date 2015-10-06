@@ -6,19 +6,19 @@ import java.util.HashMap;
  *
  * @author usuario
  */
-public class Histogram {
-    private final int[] vector;
+public class Histogram <T> {  //clase genérica
+    private final T[] vector;
 
-    public Histogram(int[] vector) {
+    public Histogram(T[] vector) {
         this.vector = vector;
     }
 
-    public int[] getVector() {
+    public T[] getVector() {
         return vector;
     }
     
-    public HashMap<Integer,Integer> getHisto(){
-        HashMap<Integer,Integer> histo = new HashMap<>();
+    public HashMap<T,Integer> getHisto(){
+        HashMap<T,Integer> histo = new HashMap<>();
         
         for (int i = 0; i < vector.length; i++) {
             if(!histo.containsKey(vector[i])){
