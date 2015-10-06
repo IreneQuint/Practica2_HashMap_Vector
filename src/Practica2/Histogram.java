@@ -1,34 +1,25 @@
 package Practica2;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
  * @author usuario
  */
 public class Histogram <T> {  //clase genérica
-    private final T[] vector;
+    private final Map<T,Integer> map = new HashMap<>();
 
-    public Histogram(T[] vector) {
-        this.vector = vector;
+    public Integer get(Object key) {
+        return map.get(key);
     }
 
-    public T[] getVector() {
-        return vector;
+    public Set<T> keySet() {
+        return map.keySet();
     }
     
-    public HashMap<T,Integer> getHisto(){
-        HashMap<T,Integer> histo = new HashMap<>();
-        
-        for (int i = 0; i < vector.length; i++) {
-            if(!histo.containsKey(vector[i])){
-                histo.put(vector[i],0);
-                
-            }
-            histo.put(vector[i],histo.get(vector[i])+1);
-        }
-        return histo;
+    public void increment (T key){
+        map.put(key, map.containsKey(key)? map.get(key)+1:1);
     }
 }
-    
-

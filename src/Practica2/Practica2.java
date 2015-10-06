@@ -18,9 +18,7 @@ public class Practica2 {
         Integer[] array = {1,4,7,1,1,8,4,1,4,9};
         String[] array1 = {"Ana","Juan","Chacha","Fuerte","Piedra","Loco","Ana"};
         
-        Histogram histo = new Histogram(array);
-        
-        HashMap<String,Integer> histogram = histo.getHisto();
+        Histogram<Integer> histogram = CalculaHisto.computeHisto(array);
         
         for (Object key : histogram.keySet()) {
             System.out.println(key + " : " + histogram.get(key));
